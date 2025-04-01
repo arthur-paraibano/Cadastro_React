@@ -15,11 +15,11 @@ function AppRoutes() {
     <Routes>
       <Route
         path="/login"
-        element={!user ? <Login /> : <Navigate to={user.firstLogin ? '/change-password' : user.profile === 'ADMINISTRADOR' ? '/admin/users' : '/user-dashboard'} />}
+        element={!user ? <Login /> : <Navigate to={user.firstLogin ? '/change-password' : '/home'} />}
       />
       <Route
         path="/register"
-        element={!user ? <Register /> : <Navigate to={user.profile === 'ADMINISTRADOR' ? '/admin/users' : '/user-dashboard'} />}
+        element={!user ? <Register /> : <Navigate to="/home" />}
       />
       <Route
         path="/home"
