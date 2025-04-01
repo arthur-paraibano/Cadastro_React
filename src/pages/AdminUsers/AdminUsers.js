@@ -14,10 +14,9 @@ function AdminUsers() {
     const fetchUsers = async () => {
       try {
         const res = await getAllUsers();
-        console.log('Resposta de /user/all:', res.data);
         setUsers(res.data);
       } catch (err) {
-        console.error('Erro ao buscar usuários:', err.response);
+        console.error('Erro ao buscar usuários:', err.response?.message);
         setError('Erro ao carregar usuários.');
       }
     };
@@ -34,7 +33,7 @@ function AdminUsers() {
       setUsers(users.filter((u) => u.id !== id));
       setError('');
     } catch (err) {
-      console.error('Erro ao excluir usuário:', err.response?.data);
+      console.error('Erro ao excluir usuário:', err.response?.message);
       setError('Erro ao excluir usuário.');
     }
   };
@@ -48,6 +47,10 @@ function AdminUsers() {
     navigate('/change-password');
   };
 
+  const handleBack = () => {
+    navigate('/home');
+  };
+
   return (
     <div className="admin-users-container">
       <div className="user-menu">
@@ -55,10 +58,10 @@ function AdminUsers() {
           👤 Redefinir Senha
         </button>
       </div>
-      <div className="welcome-box">
-        <h2>Painel do Administrador</h2>
-      </div>
+      <div className='home-container-message'>
+      <h2>Painel do Administrador</h2>
       {error && <p className="error-message">{error}</p>}
+      </div>
       <table>
         <thead>
           <tr>
@@ -87,7 +90,10 @@ function AdminUsers() {
           ))}
         </tbody>
       </table>
-      <button onClick={handleLogout} className="btn-primary">Sair</button>
+      <div className="button-group">
+        <button onClick={handleBack} className="btn-primary">Voltar</button>
+        <button onClick={handleLogout} className="btn-primary">Sair</button>
+      </div>
     </div>
   );
 }
