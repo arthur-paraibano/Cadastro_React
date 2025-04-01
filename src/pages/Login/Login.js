@@ -30,16 +30,7 @@ function Login() {
       };
 
       loginContext(user, token);
-
-      if (firstLogin === true) {
-        navigate('/change-password-first', { replace: true });
-      } else if (profile === 'ADMINISTRADOR') {
-        navigate('/admin/users');
-      } else if (profile === 'USUÁRIO') {
-        navigate('/user-dashboard');
-      } else {
-        navigate('/home');
-      }
+      navigate('/home');
     } catch (err) {
       console.error('Erro da API:', err.response?.data);
       setError(err.response?.data?.message || 'Credenciais inválidas. Tente novamente.');
@@ -66,7 +57,6 @@ function Login() {
           </div>
           <div className="input-group">
             <label htmlFor="password">Senha</label>
-            
             <input
               type="password"
               id="password"
@@ -74,7 +64,8 @@ function Login() {
               value={form.password}
               onChange={handleChange}
               placeholder="Digite sua senha"
-              required />
+              required
+            />
           </div>
           <button type="submit" className="btn-primary">Entrar</button>
         </form>
