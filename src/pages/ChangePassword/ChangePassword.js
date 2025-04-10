@@ -10,10 +10,31 @@ function ChangePassword() {
   const [error, setError] = useState('');
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
     navigate('/login');
+    setIsMenuOpen(false);
+  };
+
+  const handleChangePassword = () => {
+    navigate('/change-password');
+    setIsMenuOpen(false);
+  };
+
+  const handleUserList = () => {
+    navigate('/admin/users');
+    setIsMenuOpen(false);
+  };
+
+  const handleBack = () => {
+    navigate('/home');
+    setIsMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const handleSubmit = async (e) => {
@@ -44,6 +65,28 @@ function ChangePassword() {
 
   return (
     <div className="change-password-container">
+      <div className="user-menu">
+        <button className="user-icon" onClick={toggleMenu}> 👤 Menu
+        </button>
+        {isMenuOpen && (
+          <div className="dropdown-menu">
+            <button onClick={handleChangePassword} className="dropdown-item">
+              Redefinir Senha
+            </button>
+            {user?.profile === 'ADMINISTRADOR' && (
+              <button onClick={handleUserList} className="dropdown-item">
+                Lista de Usuários
+              </button>
+            )}
+            <button onClick={handleBack} className="dropdown-item">
+              Voltar
+            </button>
+            <button onClick={handleLogout} className="dropdown-item">
+              Sair
+            </button>
+          </div>
+        )}
+      </div>
       <div className="change-password-box">
         <h2>Redefinir Senha</h2>
         <p>Digite e confirme sua nova senha abaixo.</p>
@@ -73,7 +116,6 @@ function ChangePassword() {
           </div>
           <div className="button-group">
             <button type="submit" className="btn-primary">Salvar</button>
-            <button onClick={handleLogout} className="btn-primary">Sair</button>
           </div>
         </form>
       </div>

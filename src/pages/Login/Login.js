@@ -37,14 +37,28 @@ function Login() {
     }
   };
 
+  const handleForgotPassword = () => {
+    console.log('Forgot password clicked');
+  };
+
   return (
     <div className="login-container">
-      <div className="login-box">
-        <h2>Login</h2>
+      <div className="left-section">
+        <div className="logo">Tech Login</div>
+        <h1>Bem vindo a tela de login de Tech Master.</h1>
+        <p>Assuma o controle e cadastresse e explore um pouco das funcionabilidades.</p>
+        <div className="dots">
+          <span className="dot active"></span>
+          <span className="dot"></span>
+          <span className="dot"></span>
+        </div>
+      </div>
+      <div className="right-section">
+        <h2>Faça seu Login</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="input-group">
-            <label htmlFor="name">Nome de Usuário</label>
+            <label htmlFor="name">Usuário</label>
             <input
               type="text"
               id="name"
@@ -66,11 +80,18 @@ function Login() {
               placeholder="Digite sua senha"
               required
             />
+            <button
+              type="button"
+              className="forgot-password"
+              onClick={handleForgotPassword}
+            >
+              Esqueceu sua senha?
+            </button>
           </div>
-          <button type="submit" className="btn-primary">Entrar</button>
+          <button type="submit" className="login-btn">Login</button>
         </form>
-        <p className="register-link">
-          Não tem conta? <Link to="/register">Cadastre-se</Link>
+        <p className="signup-link">
+          Não tem uma conta? <Link to="/register">Cadastre-se</Link>
         </p>
       </div>
     </div>

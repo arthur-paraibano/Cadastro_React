@@ -32,9 +32,9 @@ function Register() {
   };
 
   return (
-    <div className="register-container">
-      <div className="register-box">
-        <h2>Cadastro</h2>
+    <div className="signup-container">
+      <div className="right-section">
+        <h2>Cadastre-se</h2>
         {error && <p className="error-message">{error}</p>}
         <form onSubmit={handleSubmit}>
           <div className="input-group">
@@ -86,16 +86,16 @@ function Register() {
             />
           </div>
           <div className="input-group">
-            <label htmlFor="profile">Perfil</label>
+            <label htmlFor="profile">Profile</label>
             <select id="profile" name="profile" value={form.profile} onChange={handleChange}>
               <option value="Usuário">Usuário</option>
               <option value="Administrador">Administrador</option>
             </select>
           </div>
-          <button type="submit" className="btn-primary">Cadastrar</button>
+          <button type="submit" className="signup-btn">Cadastrar</button>
         </form>
         <p className="login-link">
-          Já tem conta? <Link to="/login">Faça login</Link>
+          Já tem uma conta? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>

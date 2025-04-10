@@ -9,6 +9,7 @@ function AdminUsers() {
   const [error, setError] = useState('');
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -45,54 +46,82 @@ function AdminUsers() {
 
   const handleChangePassword = () => {
     navigate('/change-password');
+    setIsMenuOpen(false);
+  };
+
+  const handleUserList = () => {
+    navigate('/admin/users');
+    setIsMenuOpen(false);
   };
 
   const handleBack = () => {
     navigate('/home');
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="admin-users-container">
       <div className="user-menu">
-        <button className="user-icon" onClick={handleChangePassword}>
-          👤 Redefinir Senha
+        <button className="user-icon" onClick={toggleMenu}> 👤 Menu
         </button>
+        {isMenuOpen && (
+          <div className="dropdown-menu">
+            <button onClick={handleChangePassword} className="dropdown-item">
+              Redefinir Senha
+            </button>
+            {user?.profile === 'ADMINISTRADOR' && (
+              <button onClick={handleUserList} className="dropdown-item">
+                Lista de Usuários
+              </button>
+            )}
+            <button onClick={handleLogout} className="dropdown-item">
+              Sair
+            </button>
+          </div>
+        )}
       </div>
-      <div className='home-container-message'>
-      <h2>Painel do Administrador</h2>
-      {error && <p className="error-message">{error}</p>}
-      </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>E-mail</th>
-            <th>CPF</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          {users.map((u) => (
-            <tr key={u.id}>
-              <td>{u.name}</td>
-              <td>{u.email}</td>
-              <td>{u.cpf}</td>
-              <td>
-                <button
-                  onClick={() => handleDelete(u.id)}
-                  className="btn-delete"
-                  disabled={u.id === user.id}
-                >
-                  X
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="button-group">
-        <button onClick={handleBack} className="btn-primary">Voltar</button>
-        <button onClick={handleLogout} className="btn-primary">Sair</button>
+      <div className="admin-content">
+        <div className="admin-header">
+          <h2>Painel do Administrador</h2>
+          {error && <p className="error-message">{error}</p>}
+        </div>
+        <div className="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+                <th>CPF</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map((u) => (
+                <tr key={u.id}>
+                  <td>{u.name}</td>
+                  <td>{u.email}</td>
+                  <td>{u.cpf}</td>
+                  <td>
+                    <button
+                      onClick={() => handleDelete(u.id)}
+                      className="btn-delete"
+                      disabled={u.id === user.id}
+                    >
+                      X
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="button-group">
+          <button onClick={handleBack} className="btn-primary">Voltar</button>
+          <button onClick={handleLogout} className="btn-primary">Sair</button>
+        </div>
       </div>
     </div>
   );

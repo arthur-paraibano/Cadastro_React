@@ -1,18 +1,31 @@
-.register-container {
+.signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4a90e2 0%, #87cefa 100%); /* Fundo gradiente azul */
+  font-family: Arial, sans-serif;
+  padding: 20px; /* Padding para evitar que o formulário encoste nas bordas em telas pequenas */
 }
 
-.register-box {
-  background: #fff;
+.right-section {
+  background-color: #1c2526;
+  color: white;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
+  max-width: 500px; /* Reduzido para ser menor que o fundo */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right-section h2 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #ffffff;
 }
 
 .error-message {
@@ -25,71 +38,121 @@
   border-radius: 5px;
 }
 
-.register-box h2 {
-  margin-bottom: 30px;
-  text-align: center;
-  color: #333;
-}
-
 .input-group {
   margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
+  font-size: 14px;
   margin-bottom: 5px;
-  color: #555;
 }
 
 .input-group input,
 .input-group select {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #333;
+  border: none;
   border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s;
+  color: white;
 }
 
 .input-group input:focus,
 .input-group select:focus {
-  border-color: #667eea;
   outline: none;
+  border: 1px solid #4a90e2;
 }
 
-.btn-primary {
+.input-group select {
+  appearance: none;
+  background: #333 url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+}
+
+.signup-btn {
   width: 100%;
-  padding: 12px;
-  background: #667eea;
+  padding: 10px;
+  background-color: #4a90e2;
   border: none;
   border-radius: 5px;
-  color: #fff;
+  color: white;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
-.btn-primary:hover {
-  background: #764ba2;
-}
-
-.error-message {
-  color: #e74c3c;
-  text-align: center;
-  margin-bottom: 20px;
+.signup-btn:hover {
+  background: #3a78c2;
 }
 
 .login-link {
   text-align: center;
   margin-top: 20px;
-  color: #555;
+  font-size: 14px;
 }
 
 .login-link a {
-  color: #667eea;
+  color: #4a90e2;
   text-decoration: none;
 }
 
 .login-link a:hover {
   text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .right-section {
+    padding: 30px;
+    max-width: 400px; /* Reduzido ainda mais para telas menores */
+  }
+
+  .right-section h2 {
+    font-size: 24px;
+  }
+
+  .input-group input,
+  .input-group select {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .signup-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .login-link {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .right-section {
+    padding: 20px;
+    max-width: 300px; /* Reduzido para telas muito pequenas */
+  }
+
+  .right-section h2 {
+    font-size: 20px;
+  }
+
+  .input-group label {
+    font-size: 12px;
+  }
+
+  .input-group input,
+  .input-group select {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .signup-btn {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .login-link {
+    font-size: 10px;
+  }
 }

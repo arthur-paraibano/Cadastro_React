@@ -30,8 +30,7 @@ function Home() {
   return (
     <div className="home-container">
       <div className="user-menu">
-        <button className="user-icon" onClick={toggleMenu}>
-          👤 {user?.name || 'Usuário'}
+        <button className="user-icon" onClick={toggleMenu}> 👤 Menu
         </button>
         {isMenuOpen && (
           <div className="dropdown-menu">
@@ -49,9 +48,27 @@ function Home() {
           </div>
         )}
       </div>
-      <div className="home-container-message">
-        <h2>Hola Mundo!</h2>
-        <p>Bem-vindo, {user?.name || 'Usuário'}!</p>
+      <div className="home-content">
+        <div className="home-message">
+          <h2>Hola Mundo!</h2>
+          <p>Bem-vindo, {user?.name || 'Usuário'}!</p>
+        </div>
+      </div>
+      <div className="footer-links">
+        <a
+          href="https://www.linkedin.com/in/arthur-mikael-desenvolvedor/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+        <a
+          href="https://github.com/arthur-paraibano"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
       </div>
     </div>
   );
