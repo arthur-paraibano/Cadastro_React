@@ -38,6 +38,7 @@ function Login() {
   };
 
   const handleForgotPassword = () => {
+    setError('Função em desenvolvimento');
     console.log('Forgot password clicked');
   };
 
