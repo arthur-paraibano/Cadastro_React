@@ -79,12 +79,12 @@
 
 .input-group input {
   width: 100%;
-  padding: 8px; /* Reduzido de 10px para 8px */
+  padding: 8px;
   background-color: #333;
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 14px; /* Reduzido de tamanho implícito para 14px */
+  font-size: 14px;
 }
 
 .input-group input:focus {
@@ -111,12 +111,12 @@
 
 .login-btn {
   width: 100%;
-  padding: 8px; /* Reduzido de 10px para 8px */
+  padding: 8px;
   background-color: #4a90e2;
   border: none;
   border-radius: 5px;
   color: white;
-  font-size: 14px; /* Reduzido de 16px para 14px */
+  font-size: 14px;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -170,13 +170,13 @@
   }
 
   .input-group input {
-    font-size: 12px; /* Reduzido para 12px em telas menores */
-    padding: 6px; /* Reduzido de 8px para 6px */
+    font-size: 12px;
+    padding: 6px;
   }
 
   .login-btn {
-    font-size: 12px; /* Reduzido para 12px */
-    padding: 6px; /* Reduzido de 8px para 6px */
+    font-size: 12px;
+    padding: 6px;
   }
 
   .signup-link {
@@ -210,13 +210,13 @@
   }
 
   .input-group input {
-    padding: 5px; /* Reduzido para 5px em telas muito pequenas */
-    font-size: 11px; /* Reduzido para 11px */
+    padding: 5px;
+    font-size: 11px;
   }
 
   .login-btn {
-    padding: 5px; /* Reduzido para 5px */
-    font-size: 11px; /* Reduzido para 11px */
+    padding: 5px;
+    font-size: 11px;
   }
 
   .signup-link {

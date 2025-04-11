@@ -95,17 +95,16 @@
   }
   
   .footer-links a {
-    color: rgba(0, 0, 0, 0.7); /* Branco com opacidade para ser discreto */
+    color: rgba(0, 0, 0, 0.7);
     font-size: 12px;
     text-decoration: none;
     transition: color 0.3s;
   }
   
   .footer-links a:hover {
-    color: #4a90e2; /* Cor azul ao passar o mouse */
+    color: #4a90e2;
   }
   
-  /* Responsividade */
   @media (max-width: 768px) {
     .home-message {
       padding: 20px;

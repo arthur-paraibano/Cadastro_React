@@ -3,9 +3,9 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #4a90e2 0%, #87cefa 100%); /* Fundo gradiente azul */
+  background: linear-gradient(135deg, #4a90e2 0%, #87cefa 100%);
   font-family: Arial, sans-serif;
-  padding: 20px; /* Padding para evitar que o formulário encoste nas bordas em telas pequenas */
+  padding: 20px;
 }
 
 .right-section {
@@ -14,8 +14,8 @@
   padding: 40px;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px; /* Reduzido para ser menor que o fundo */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidade */
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,11 +100,10 @@
   text-decoration: underline;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .right-section {
     padding: 30px;
-    max-width: 400px; /* Reduzido ainda mais para telas menores */
+    max-width: 400px;
   }
 
   .right-section h2 {
@@ -130,7 +129,7 @@
 @media (max-width: 480px) {
   .right-section {
     padding: 20px;
-    max-width: 300px; /* Reduzido para telas muito pequenas */
+    max-width: 300px;
   }
 
   .right-section h2 {

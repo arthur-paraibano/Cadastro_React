@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #4a90e2 0%, #87cefa 100%); /* Mesmo gradiente das telas anteriores */
+  background: linear-gradient(135deg, #4a90e2 0%, #87cefa 100%);
   font-family: Arial, sans-serif;
   position: relative;
   padding: 20px;
@@ -17,8 +17,8 @@
 }
 
 .user-icon {
-  background: #1c2526; /* Mesmo fundo escuro */
-  color: #4a90e2; /* Cor azul para o texto */
+  background: #1c2526;
+  color: #4a90e2;
   border: none;
   padding: 8px 16px;
   border-radius: 5px;
@@ -28,14 +28,14 @@
 }
 
 .user-icon:hover {
-  background: #2a3435; /* Tom mais claro para hover */
+  background: #2a3435;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 40px;
   right: 0;
-  background: #1c2526; /* Mesmo fundo escuro */
+  background: #1c2526;
   border-radius: 5px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -48,24 +48,24 @@
   border: none;
   padding: 10px 15px;
   text-align: left;
-  color: white; /* Texto branco para contraste */
+  color: white;
   font-size: 14px;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .dropdown-item:hover {
-  background: #2a3435; /* Mesmo tom de hover */
+  background: #2a3435;
 }
 
 .admin-content {
-  background: #1c2526; /* Mesmo fundo escuro das telas anteriores */
+  background: #1c2526;
   color: white;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   width: 100%;
-  max-width: 900px; /* Tamanho máximo para a tabela */
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -94,13 +94,13 @@
 
 .table-wrapper {
   width: 100%;
-  overflow-x: auto; /* Para permitir rolagem horizontal em telas pequenas */
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  background: #333; /* Fundo mais claro que o container para contraste */
+  background: #333;
   color: white;
   border-radius: 5px;
   overflow: hidden;
@@ -114,7 +114,7 @@ td {
 }
 
 th {
-  background: #4a90e2; /* Cor azul para o cabeçalho */
+  background: #4a90e2;
   color: white;
   font-weight: 600;
   text-transform: uppercase;
@@ -128,17 +128,17 @@ td {
 }
 
 tr:nth-child(even) {
-  background: #3a3a3a; /* Tom um pouco mais claro para linhas pares */
+  background: #3a3a3a;
 }
 
 tr:hover {
-  background: #444; /* Tom mais claro ao passar o mouse */
+  background: #444;
   transition: background 0.2s ease;
 }
 
 .btn-delete {
   padding: 6px 12px;
-  background: #e74c3c; /* Vermelho para o botão de deletar */
+  background: #e74c3c;
   color: white;
   border: none;
   border-radius: 5px;
@@ -168,7 +168,7 @@ tr:hover {
 
 .btn-primary {
   padding: 10px 20px;
-  background: #4a90e2; /* Mesmo azul dos botões anteriores */
+  background: #4a90e2;
   border: none;
   border-radius: 5px;
   color: white;
@@ -182,7 +182,6 @@ tr:hover {
   transform: scale(1.05);
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .admin-content {
     padding: 20px;
