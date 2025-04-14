@@ -77,7 +77,7 @@ function AdminUsers() {
       <div className="admin-users-container">
         <div className="user-menu">
           <button className="user-icon" onClick={toggleMenu}>
-            👤 {user?.name || 'Usuário'}
+            👤 Menu
           </button>
           {isMenuOpen && (
             <div className="dropdown-menu">

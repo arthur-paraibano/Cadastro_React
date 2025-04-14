@@ -74,7 +74,7 @@ function ChangePassword() {
       <div className="change-password-container">
         <div className="user-menu">
           <button className="user-icon" onClick={toggleMenu}>
-            👤 {user?.name || 'Usuário'}
+            👤 Menu
           </button>
           {isMenuOpen && (
             <div className="dropdown-menu">
@@ -127,22 +127,6 @@ function ChangePassword() {
             <div className="button-group">
               <button type="submit" className="btn-primary" disabled={loading}>
                 {loading ? 'Carregando...' : 'Salvar'}
-              </button>
-              <button
-                type="button"
-                onClick={handleBack}
-                className="btn-primary"
-                disabled={loading}
-              >
-                Voltar
-              </button>
-              <button
-                type="button"
-                onClick={handleLogout}
-                className="btn-primary"
-                disabled={loading}
-              >
-                Sair
               </button>
             </div>
           </form>
